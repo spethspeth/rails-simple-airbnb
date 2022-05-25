@@ -1,7 +1,16 @@
-<ul>
+<div class="cards">
   <% @flats.each do |flat| %>
-    <li><%= link_to flat.name, flat_path(flat) %><% flat.address %><% flat.price_per_night %><% flat.number_of_guests %></li>
+    <div class="card">
+      <div class="imgcontainer">
+        <img src=<%= flat.picture_url %>>
+      </div>
+      <h4><%= link_to flat.name, flat_path(flat) %></h4>
+      <p><%= flat.address %></p>
+      <p><%= flat.price_per_night %></p>
+      <p><%= flat.number_of_guests %></p>
+    </div>
   <% end %>
-</ul>
+</div>
+
 
 <%= link_to 'Add flat', new_flat_path %> |
